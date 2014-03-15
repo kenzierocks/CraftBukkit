@@ -775,4 +775,16 @@ public class CraftEventFactory {
         entityHuman.world.getServer().getPluginManager().callEvent(event);
         return (Cancellable) event;
     }
+
+    /**
+     * EntitySpawnEvent
+     */
+    public static EntitySpawnEvent callEntitySpawnEvent(Entity entity, SpawnReason spawnReason) {
+        org.bukkit.entity.Entity bukkitEntity = (org.bukkit.entity.Entity) entity.getBukkitEntity();
+        CraftServer craftServer = (CraftServer) bukkitEntity.getServer();
+
+        EntitySpawnEvent event = new EntitySpawnEvent(bukkitEntity, spawnReason);
+        craftServer.getPluginManager().callEvent(event);
+        return event;
+    }
 }
