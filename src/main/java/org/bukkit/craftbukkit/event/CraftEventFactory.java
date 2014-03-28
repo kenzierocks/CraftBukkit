@@ -780,11 +780,6 @@ public class CraftEventFactory {
      * EntitySpawnEvent
      */
     public static EntitySpawnEvent callEntitySpawnEvent(Entity entity, SpawnReason spawnReason) {
-        org.bukkit.entity.Entity bukkitEntity = (org.bukkit.entity.Entity) entity.getBukkitEntity();
-        CraftServer craftServer = (CraftServer) bukkitEntity.getServer();
-
-        EntitySpawnEvent event = new EntitySpawnEvent(bukkitEntity, spawnReason);
-        craftServer.getPluginManager().callEvent(event);
-        return event;
+        return callEvent(new EntitySpawnEvent((org.bukkit.entity.Entity) entity.getBukkitEntity(), spawnReason));
     }
 }
