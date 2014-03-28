@@ -583,7 +583,7 @@ public final class CraftServer implements Server {
     public boolean getAllowNether() {
         return this.getConfigBoolean("allow-nether", true);
     }
-    
+
     public String getResourcePack() {
         return this.getConfigString("resource-pack", "");
     }
