@@ -902,7 +902,7 @@ public abstract class World implements IBlockAccess {
         } else if (entity.getBukkitEntity() instanceof org.bukkit.entity.Projectile) {
             // Not all projectiles extend EntityProjectile, so check for Bukkit interface instead
             event = CraftEventFactory.callProjectileLaunchEvent(entity);
-        } else if(!(entity instanceof EntityPlayer)){
+        } else if(!(entity instanceof EntityPlayer)) {
             event = CraftEventFactory.callEntitySpawnEvent(entity, spawnReason);
         }
 
